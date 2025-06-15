@@ -1,20 +1,38 @@
 function initTheme() {
     let initialTheme = "system"; // Default theme
 
-    // Check for server-provided theme if user is authenticated
-    {% if current_user.is_authenticated and current_user.theme_preference %}
-    initialTheme = "{{ current_user.theme_preference }}";
-    localStorage.setItem("theme", initialTheme); // Update localStorage to match server preference
-    {% else %}
-    // If no server theme, try localStorage
-    const localTheme = localStorage.getItem("theme");
-    if (localTheme) {
-        initialTheme = localTheme;
+    if (window.USER_THEME_PREFERENCE && window.USER_THEME_PREFERENCE !== '') {
+        initialTheme = window.USER_THEME_PREFERENCE;
+        localStorage.setItem("theme", initialTheme);
+    } else {
+        const localTheme = localStorage.getItem("theme");
+        if (localTheme) {
+            initialTheme = localTheme;
+        }
     }
-    {% endif %}
 
     applyTheme(initialTheme);
     document.getElementById("theme-select").value = initialTheme;
+
+    const themeSelect = document.getElementById("theme-select");
+    if (themeSelect) {
+        themeSelect.addEventListener("change", function() {
+            handleThemeChange(this);
+        });
+    }
+}
+
+function applyTheme(themeName) {
+    let themeToApply = themeName;
+    if (themeName === "system") {
+        themeToApply = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
+    }
+
+    if (themeToApply === "dark") {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+        document.documentElement.removeAttribute('data-theme');
+    }
 }
 
 window.addEventListener("DOMContentLoaded", initTheme);

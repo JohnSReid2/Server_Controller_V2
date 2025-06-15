@@ -6,6 +6,7 @@
     <title>{% block title %}Server Controller{% endblock %}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <script>window.USER_THEME_PREFERENCE = "{{ current_user.theme_preference if current_user.is_authenticated and current_user.theme_preference else '' }}";</script>
     <script src="{{ url_for('static', filename='theme.js') }}"></script>
     <script src="{{ url_for('static', filename='menu.js') }}"></script>
 </head>
@@ -57,7 +58,7 @@
             {% endif %}
         </span>
         <span>
-            <select id="theme-select" onchange="handleThemeChange(this)">
+            <select id="theme-select">
                 <option value="light">☀️ Light</option>
                 <option value="dark">🌙 Dark</option>
                 <option value="system">💻 System</option>

@@ -142,3 +142,14 @@
 [2025-06-15 14:43:25,963] [INFO] User admin logged in
 [2025-06-15 14:57:00,974] [INFO] User admin logged in
 [2025-06-15 14:59:18,065] [INFO] User admin logged in
+[2025-06-15 15:07:14,264] [INFO] User admin logged in
+[2025-06-15 15:11:18,824] [INFO] User admin logged in
+[2025-06-15 15:14:17,776] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-15 15:14:18,646] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-15 15:14:21,135] [INFO] [SETTINGS] admin updated theme to light
+[2025-06-15 15:14:23,023] [INFO] [SETTINGS] admin updated theme to system
+[2025-06-15 15:14:24,166] [INFO] [SETTINGS] admin updated theme to dark
+[2025-06-15 15:14:25,071] [INFO] [SETTINGS] admin updated theme to light
+[2025-06-15 15:14:41,495] [INFO] User admin logged in
+[2025-06-15 15:14:44,221] [INFO] [SETTINGS] admin updated theme to dark
+[2025-06-15 15:14:55,178] [INFO] User admin logged in
