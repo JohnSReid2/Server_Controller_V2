@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}Server Controller{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <header>
+        <nav>
+            <span><h1>Server Controller</h1></span>
+            <span>
+            
+            
+            {% if current_user.is_authenticated %}
+            <div class="menu-btn" onclick="toggleMenu(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+
+            <div class="nav-dropdown" id="navDropdown">
+                <a href="{{ url_for('dashboard') }}">Dashboard</a>
+                    {% if current_user.is_admin %}
+                        <a href="{{ url_for('admin.admin_panel') }}">Admin</a>
+                    {% endif %}
+                <a href="{{ url_for('auth.logout') }}">Logout</a>
+            </div>          
+            {% endif %}
+            </span>
+        </nav>
+    </header>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <footer>
+        <span>© {{ current_year }} John Reid</span>
+        <span>
+            {% if current_user.is_authenticated %}
+                Logged in as {{ current_user.username }}
+            {% else %}
+                Not logged in
+            {% endif %}
+        </span>
+        <span>
+            <select id="theme-select" onchange="handleThemeChange(this)">
+                <option value="light">☀️ Light</option>
+                <option value="dark">🌙 Dark</option>
+                <option value="system">💻 System</option>
+            </select>
+        </span>
+    </footer>
+</body>
+
+<script>
+function toggleMenu(x) {
+  x.classList.toggle("change");
+  const dropdown = document.getElementById('navDropdown');
+  if (dropdown.style.maxHeight) {
+    dropdown.style.maxHeight = null;
+  } else {
+    dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+  }
+}
+</script>
+
+<script>
+function applyTheme(theme) {
+    if (theme === "system") {
+        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", systemTheme);
+    } else {
+        document.documentElement.setAttribute("data-theme", theme);
+    }
+}
+
+function initTheme() {
+    const savedTheme = localStorage.getItem("theme") || "system";
+    applyTheme(savedTheme);
+    document.getElementById("theme-select").value = savedTheme;
+}
+
+window.addEventListener("DOMContentLoaded", initTheme);
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if (localStorage.getItem("theme") === "system") {
+        applyTheme("system");
+    }
+});
+
+function handleThemeChange(select) {
+    const selected = select.value;
+    localStorage.setItem("theme", selected);
+    applyTheme(selected);
+
+    // If logged in, update user preference on server
+    fetch("/api/set-theme", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ theme: selected })
+    }).catch(err => console.error("Theme save failed:", err));
+}
+</script>
+</html>

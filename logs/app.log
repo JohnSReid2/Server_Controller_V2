@@ -1,0 +1,135 @@
+[2025-06-09 20:11:37,694] [INFO] [LOGIN] admin logged in.
+[2025-06-09 20:11:46,811] [INFO] [LOGIN] admin logged in.
+[2025-06-09 20:12:36,185] [INFO] [LOGIN] angie logged in.
+[2025-06-09 20:12:58,047] [INFO] [LOGIN] admin logged in.
+[2025-06-09 20:12:59,326] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-09 20:19:54,433] [WARNING] [LOGIN FAILED] Attempted login for username: admin
+[2025-06-09 20:19:57,927] [INFO] [LOGIN] admin logged in.
+[2025-06-09 20:19:59,043] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-09 20:20:14,198] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-09 20:20:14,442] [INFO] [ADMIN] User created: john, Admin: True by admin
+[2025-06-09 20:20:14,448] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-09 20:20:28,189] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-09 20:20:28,428] [INFO] [ADMIN] User created: john, Admin: True by admin
+[2025-06-09 20:20:28,433] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-09 20:20:37,533] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-09 20:20:44,637] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-09 20:20:44,873] [INFO] [ADMIN] User created: john, Admin: False by admin
+[2025-06-09 20:20:44,878] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-09 20:25:04,474] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-09 20:25:14,357] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-09 20:25:14,586] [ERROR] [ADMIN ERROR] Failed to create user john: table users has no column named password_hash
+[2025-06-09 20:25:14,591] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-09 20:25:31,848] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-09 20:25:51,189] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-09 20:25:51,424] [ERROR] [ADMIN ERROR] Failed to create user john: UNIQUE constraint failed: users.username
+[2025-06-09 20:25:51,429] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 01:18:25,709] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 01:18:35,534] [ERROR] [LOGIN ERROR] User.__init__() got an unexpected keyword argument 'id'. Did you mean 'id_'?
+[2025-06-13 01:19:29,806] [ERROR] [LOGIN ERROR] User.__init__() got an unexpected keyword argument 'id'. Did you mean 'id_'?
+[2025-06-13 01:19:34,861] [ERROR] [LOGIN ERROR] User.__init__() got an unexpected keyword argument 'id'. Did you mean 'id_'?
+[2025-06-13 01:19:57,939] [ERROR] [LOGIN ERROR] User.__init__() got an unexpected keyword argument 'id'. Did you mean 'id_'?
+[2025-06-13 01:20:04,611] [ERROR] [LOGIN ERROR] User.__init__() got an unexpected keyword argument 'id'. Did you mean 'id_'?
+[2025-06-13 01:20:09,522] [ERROR] [LOGIN ERROR] User.__init__() got an unexpected keyword argument 'id'. Did you mean 'id_'?
+[2025-06-13 01:20:51,968] [WARNING] Failed login: unknown user 'adminh'
+[2025-06-13 01:22:56,924] [ERROR] [LOGIN ERROR] User.__init__() got an unexpected keyword argument 'id'. Did you mean 'id_'?
+[2025-06-13 01:23:16,822] [ERROR] [LOGIN ERROR] User.__init__() got an unexpected keyword argument 'id'. Did you mean 'id_'?
+[2025-06-13 01:25:44,284] [INFO] User admin logged in
+[2025-06-13 01:25:44,285] [ERROR] [LOGIN ERROR] Could not build url for endpoint 'main.dashboard'. Did you mean 'dashboard' instead?
+[2025-06-13 01:25:51,252] [INFO] User admin logged in
+[2025-06-13 01:25:51,252] [ERROR] [LOGIN ERROR] Could not build url for endpoint 'main.dashboard'. Did you mean 'dashboard' instead?
+[2025-06-13 01:25:54,604] [INFO] User admin logged in
+[2025-06-13 01:25:54,605] [ERROR] [LOGIN ERROR] Could not build url for endpoint 'main.dashboard'. Did you mean 'dashboard' instead?
+[2025-06-13 01:26:14,548] [INFO] User admin logged in
+[2025-06-13 01:26:14,549] [ERROR] [LOGIN ERROR] Could not build url for endpoint 'main.dashboard'. Did you mean 'dashboard' instead?
+[2025-06-13 01:26:18,708] [INFO] User admin logged in
+[2025-06-13 01:26:18,709] [ERROR] [LOGIN ERROR] Could not build url for endpoint 'main.dashboard'. Did you mean 'dashboard' instead?
+[2025-06-13 01:26:34,135] [INFO] User admin logged in
+[2025-06-13 01:26:34,135] [ERROR] [LOGIN ERROR] Could not build url for endpoint 'main.dashboard'. Did you mean 'dashboard' instead?
+[2025-06-13 01:28:05,764] [INFO] User admin logged in
+[2025-06-13 01:28:05,765] [ERROR] [LOGIN ERROR] Could not build url for endpoint 'main.dashboard'. Did you mean 'dashboard' instead?
+[2025-06-13 01:28:16,754] [INFO] User admin logged in
+[2025-06-13 01:28:16,755] [ERROR] [LOGIN ERROR] Could not build url for endpoint 'main.dashboard'. Did you mean 'dashboard' instead?
+[2025-06-13 01:29:31,839] [INFO] User admin logged in
+[2025-06-13 01:29:38,895] [INFO] User admin logged in
+[2025-06-13 01:29:52,653] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 01:29:54,440] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 01:29:55,162] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 01:29:55,596] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 01:35:17,602] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 01:35:29,240] [INFO] User admin logged in
+[2025-06-13 01:56:35,717] [INFO] User admin logged in
+[2025-06-13 03:42:02,634] [INFO] User admin logged in
+[2025-06-13 03:42:04,726] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 03:42:14,109] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 03:42:18,455] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 03:44:02,296] [INFO] User admin logged in
+[2025-06-13 03:44:05,574] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 03:47:37,586] [INFO] User admin logged in
+[2025-06-13 03:48:39,087] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 03:48:42,706] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 03:48:44,623] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 03:49:06,047] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 03:50:35,343] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 03:50:36,732] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 03:50:37,504] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 03:53:14,585] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 03:53:33,073] [INFO] User admin logged in
+[2025-06-13 03:53:44,332] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 03:53:47,152] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 03:54:36,793] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 03:54:45,483] [INFO] User admin logged in
+[2025-06-13 03:55:07,847] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 03:56:32,545] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 03:56:38,216] [INFO] User admin logged in
+[2025-06-13 03:56:39,571] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 03:56:52,931] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 03:56:53,046] [WARNING] [ADMIN] User 'admin' already exists.
+[2025-06-13 03:56:53,051] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 03:57:20,905] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 03:57:27,275] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 03:57:27,391] [WARNING] [ADMIN] User 'admin' already exists.
+[2025-06-13 03:57:27,396] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 03:57:52,774] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 03:58:58,820] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 03:59:07,455] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 04:00:36,389] [INFO] User admin logged in
+[2025-06-13 04:04:01,960] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 04:04:03,934] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 04:04:06,278] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 04:05:59,763] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 04:06:10,450] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 04:06:14,488] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 04:07:05,545] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 04:07:21,546] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 04:12:14,234] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 04:36:28,708] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 04:36:39,524] [INFO] User admin logged in
+[2025-06-13 04:36:41,877] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 04:45:11,529] [INFO] User admin logged in
+[2025-06-13 04:45:23,696] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 04:47:18,134] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 04:47:31,652] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 04:47:46,649] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 04:48:14,071] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 04:48:24,255] [WARNING] Failed login: unknown user 'angie'
+[2025-06-13 04:48:28,068] [WARNING] Failed login: unknown user 'asd'
+[2025-06-13 04:48:37,174] [WARNING] Failed login: incorrect password for user 'admin'
+[2025-06-13 04:49:12,270] [WARNING] Failed login: incorrect password for user 'admin'
+[2025-06-13 04:54:56,206] [INFO] User admin logged in
+[2025-06-13 04:55:11,619] [WARNING] Failed login: incorrect password for user 'admin'
+[2025-06-13 04:56:00,644] [WARNING] Failed login: incorrect password for user 'admin'
+[2025-06-13 04:56:03,577] [INFO] User admin logged in
+[2025-06-13 05:03:07,842] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 05:05:43,639] [WARNING] Failed login: incorrect password for user 'admin'
+[2025-06-13 05:05:46,993] [INFO] User admin logged in
+[2025-06-13 05:06:05,763] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 05:12:11,933] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 05:12:45,004] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 05:13:27,718] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 05:13:30,768] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 05:13:33,356] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 05:22:52,227] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 06:18:37,506] [INFO] User admin logged in
+[2025-06-13 06:33:17,364] [INFO] [ACCESS] admin accessed Admin Panel
+[2025-06-13 06:48:19,925] [INFO] User admin logged in

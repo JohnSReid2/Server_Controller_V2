@@ -1,0 +1,198 @@
+:root {
+    --bg-color: #f5f7fa;
+    --text-color: #333;
+    --nav-bg: #007bff;
+    --nav-text: white;
+    --form-bg: white;
+    --alert-success: #d4edda;
+    --alert-error: #f8d7da;
+    --footer-bg: #e9ecef;
+    --footer-text: #555;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1e1e1e;
+    --text-color: #f1f1f1;
+    --nav-bg: #222;
+    --nav-text: #fff;
+    --form-bg: #2c2c2c;
+    --alert-success: #295c35;
+    --alert-error: #6e1a1a;
+    --footer-bg: #333;
+    --footer-text: #aaa;
+}
+
+
+
+html, body {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    padding: 0px;
+}
+
+/* Navbar styling */
+nav {
+    position: relative;
+    background-color: #007bff;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    user-select: none; /* Prevents text selection */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+}
+
+/* Hamburger menu button */
+.menu-btn {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-btn div {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Animate hamburger to X */
+.menu-btn.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.menu-btn.change .bar2 {
+    opacity: 0;
+}
+
+.menu-btn.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+/* Dropdown container (hidden by default) */
+.nav-dropdown {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    background-color: #007bff;
+    border-radius: 0 0 8px 8px;
+    position: absolute;
+    top: 55px; /* Adjust based on nav height */
+    right: 20px;
+    width: 150px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    margin-top: 10px;
+}
+
+/* Dropdown links */
+.nav-dropdown a {
+    padding: 12px 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.nav-dropdown a:last-child {
+    border-bottom: none;
+}
+
+.nav-dropdown a:hover {
+    background-color: #0056b3;
+}
+
+/* Main content container */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Form styling */
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+form p {
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"], button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: #0056b3;
+}
+
+/* Alert messages */
+.alert {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Footer styling */
+footer {
+    background-color: #e9ecef;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    color: #555;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+}
+
+a button {
+    width: auto;
+    margin-top: 10px;
+}
