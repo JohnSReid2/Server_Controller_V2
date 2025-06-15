@@ -8,9 +8,10 @@ from flask import request, jsonify
 # Define a Blueprint specific to settings-related routes
 settings_bp = Blueprint("settings", __name__)
 
+# Route to change user theme preference, accessible only to logged-in users
 @settings_bp.route('/api/set-theme', methods=['POST'])
 @login_required
-def set_theme():
+def set_theme_preference():
     theme = request.json.get("theme")
     if theme not in ["light", "dark", "system"]:
         logger.warning(f"[SETTINGS] {current_user.username} attempted to set invalid theme: {theme}")

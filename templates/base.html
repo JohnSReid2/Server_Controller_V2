@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% block title %}Server Controller{% endblock %}</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <script src="{{ url_for('static', filename='theme.js') }}"></script>
+    <script src="{{ url_for('static', filename='menu.js') }}"></script>
 </head>
 <body>
     <header>
@@ -62,54 +65,4 @@
         </span>
     </footer>
 </body>
-
-<script>
-function toggleMenu(x) {
-  x.classList.toggle("change");
-  const dropdown = document.getElementById('navDropdown');
-  if (dropdown.style.maxHeight) {
-    dropdown.style.maxHeight = null;
-  } else {
-    dropdown.style.maxHeight = dropdown.scrollHeight + "px";
-  }
-}
-</script>
-
-<script>
-function applyTheme(theme) {
-    if (theme === "system") {
-        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        document.documentElement.setAttribute("data-theme", systemTheme);
-    } else {
-        document.documentElement.setAttribute("data-theme", theme);
-    }
-}
-
-function initTheme() {
-    const savedTheme = localStorage.getItem("theme") || "system";
-    applyTheme(savedTheme);
-    document.getElementById("theme-select").value = savedTheme;
-}
-
-window.addEventListener("DOMContentLoaded", initTheme);
-
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-    if (localStorage.getItem("theme") === "system") {
-        applyTheme("system");
-    }
-});
-
-function handleThemeChange(select) {
-    const selected = select.value;
-    localStorage.setItem("theme", selected);
-    applyTheme(selected);
-
-    // If logged in, update user preference on server
-    fetch("/api/set-theme", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ theme: selected })
-    }).catch(err => console.error("Theme save failed:", err));
-}
-</script>
 </html>
