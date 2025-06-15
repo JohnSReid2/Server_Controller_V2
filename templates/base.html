@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{% block title %}Server Controller{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
@@ -86,9 +87,22 @@ function applyTheme(theme) {
 }
 
 function initTheme() {
-    const savedTheme = localStorage.getItem("theme") || "system";
-    applyTheme(savedTheme);
-    document.getElementById("theme-select").value = savedTheme;
+    let initialTheme = "system"; // Default theme
+
+    // Check for server-provided theme if user is authenticated
+    {% if current_user.is_authenticated and current_user.theme_preference %}
+    initialTheme = "{{ current_user.theme_preference }}";
+    localStorage.setItem("theme", initialTheme); // Update localStorage to match server preference
+    {% else %}
+    // If no server theme, try localStorage
+    const localTheme = localStorage.getItem("theme");
+    if (localTheme) {
+        initialTheme = localTheme;
+    }
+    {% endif %}
+
+    applyTheme(initialTheme);
+    document.getElementById("theme-select").value = initialTheme;
 }
 
 window.addEventListener("DOMContentLoaded", initTheme);
@@ -105,9 +119,13 @@ function handleThemeChange(select) {
     applyTheme(selected);
 
     // If logged in, update user preference on server
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     fetch("/api/set-theme", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": csrfToken
+        },
         body: JSON.stringify({ theme: selected })
     }).catch(err => console.error("Theme save failed:", err));
 }
