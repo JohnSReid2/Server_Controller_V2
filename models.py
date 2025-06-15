@@ -13,8 +13,13 @@ def init_db():
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 username TEXT UNIQUE NOT NULL,
                 password TEXT NOT NULL,
+<<<<<<< HEAD
                 is_admin INTEGER DEFAULT 0
                 , theme_preference TEXT DEFAULT 'light'
+=======
+                is_admin INTEGER DEFAULT 0,
+                theme_preference TEXT DEFAULT 'light'
+>>>>>>> main
             )
         ''')
         conn.commit()
