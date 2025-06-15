@@ -26,10 +26,6 @@ class User(UserMixin):
     def from_db(user_row):
         # user_row: (id, username, password, is_admin, theme_preference)
         return User(id_=user_row[0], username=user_row[1], is_admin=bool(user_row[3]), theme_preference=user_row[4])
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 
 
 # Flask-Login callback to load a user from the session by ID.

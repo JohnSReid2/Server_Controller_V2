@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{% block title %}Server Controller{% endblock %}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
@@ -66,74 +65,4 @@
         </span>
     </footer>
 </body>
-<<<<<<< HEAD
-=======
-
-<script>
-function toggleMenu(x) {
-  x.classList.toggle("change");
-  const dropdown = document.getElementById('navDropdown');
-  if (dropdown.style.maxHeight) {
-    dropdown.style.maxHeight = null;
-  } else {
-    dropdown.style.maxHeight = dropdown.scrollHeight + "px";
-  }
-}
-</script>
-
-<script>
-function applyTheme(theme) {
-    if (theme === "system") {
-        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        document.documentElement.setAttribute("data-theme", systemTheme);
-    } else {
-        document.documentElement.setAttribute("data-theme", theme);
-    }
-}
-
-function initTheme() {
-    let initialTheme = "system"; // Default theme
-
-    // Check for server-provided theme if user is authenticated
-    {% if current_user.is_authenticated and current_user.theme_preference %}
-    initialTheme = "{{ current_user.theme_preference }}";
-    localStorage.setItem("theme", initialTheme); // Update localStorage to match server preference
-    {% else %}
-    // If no server theme, try localStorage
-    const localTheme = localStorage.getItem("theme");
-    if (localTheme) {
-        initialTheme = localTheme;
-    }
-    {% endif %}
-
-    applyTheme(initialTheme);
-    document.getElementById("theme-select").value = initialTheme;
-}
-
-window.addEventListener("DOMContentLoaded", initTheme);
-
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-    if (localStorage.getItem("theme") === "system") {
-        applyTheme("system");
-    }
-});
-
-function handleThemeChange(select) {
-    const selected = select.value;
-    localStorage.setItem("theme", selected);
-    applyTheme(selected);
-
-    // If logged in, update user preference on server
-    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-    fetch("/api/set-theme", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "X-CSRFToken": csrfToken
-        },
-        body: JSON.stringify({ theme: selected })
-    }).catch(err => console.error("Theme save failed:", err));
-}
-</script>
->>>>>>> main
 </html>
