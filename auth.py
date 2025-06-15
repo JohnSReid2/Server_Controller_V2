@@ -15,15 +15,18 @@ login_manager = LoginManager()
 
 # User class for Flask-Login
 class User(UserMixin):
-    def __init__(self, id_, username, is_admin):
+    def __init__(self, id_, username, is_admin, theme_preference=None):
         self.id = id_
         self.username = username
         self.is_admin = is_admin
+        self.theme_preference = theme_preference
 
     # Helper to construct a User from DB row tuple
     @staticmethod
     def from_db(user_row):
-        return User(id_=user_row[0], username=user_row[1], is_admin=bool(user_row[3]))
+        # user_row: (id, username, password, is_admin, theme_preference)
+        # theme_preference is at index 4
+        return User(id_=user_row[0], username=user_row[1], is_admin=bool(user_row[3]), theme_preference=user_row[4])
 
 
 # Flask-Login callback to load a user from the session by ID.
